@@ -1,0 +1,38 @@
+VERSION_NUMBER:46979
+RELEASE_DATE:NOV  29th 2013
+NOV  29th 2013
+Hearbeat plugin case sensitive fix for jurisdiction and classification
+
+NOV9th
+-Performance improvement for CCLcountry insert
+
+OCT 29:
+Multivalue License changes.
+
+Sep 30th 2013
+-Code changes for updating last read time stamp at authority control table
+
+Aug 29th
+-Code Changes for null pointer execption occured at UTC dev box testing
+
+July 24th 2013
+-Code changes for verifying cclcountries and Ipmapping data at server level
+
+July 4th 2013
+-Code changes for supporting the single enrollment of uid and wsid
+
+June 20th 2013:
+- Code changes for country code validation for user country mapping
+
+June 14th 2013
+- Password encryption for BizAuthDatabase Passoword 
+- Multi-value handling on dictionary data
+	For each attribute name, we will also have a separator configuration (optional).
+	If a separator configuration exists and if the value is multi-string (coming as array) – then handle the data processing appropriately.
+- Control table update and lookup
+	Select rows with ‘S’ in LockedBy and don’t read the data.
+	Before reading the data, update LockedBy to ‘N’. 
+
+
+May 31st 2013
+- Base Version release

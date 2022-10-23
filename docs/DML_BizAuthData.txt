@@ -1,0 +1,805 @@
+USE BizAuthData
+GO
+
+DELETE FROM AuthorityUsers;
+DELETE FROM AuthorityResource;
+DELETE FROM AuthorityItems;
+DELETE FROM AuthorityForeignConsignee;
+DELETE FROM AuthorityCountries;
+DELETE FROM AuthorityClassification;
+DELETE FROM AuthorityCharacteristics;
+DELETE FROM Authority;
+
+DELETE FROM AuthorityStatusMaster;
+
+INSERT INTO AuthorityStatusMaster (StatusCode, Description) VALUES ('A21', 'Active');
+INSERT INTO AuthorityStatusMaster (StatusCode, Description) VALUES ('IA1', 'Inactive');
+INSERT INTO AuthorityStatusMaster (StatusCode, Description) VALUES ('V20', 'Not Valid');
+GO
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('1', 'Official-1', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-189', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('1', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('1', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('1', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('1', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('1', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('1', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('1', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('1', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('1', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('1', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('1', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('1', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('1', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('1', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('1', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('1', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('2', 'Official-2', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-189', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('2', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('2', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('2', 'IN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('2', 'SG')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('2', 'CA')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('2', '1009')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('2', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('2', 'Single Crystal')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('2', 'Laser Drill')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('2', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('2', '10009')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('2', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('2', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('2', '3a33.1')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('2', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('3', 'Official-3', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-189', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('3', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('3', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('3', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('3', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('3', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('3', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('3', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('3', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('3', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('3', '102')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('3', 'VIII(b)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('3', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('4', 'Official-4', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-189', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('4', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('4', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('4', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('4', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('4', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('4', '1011')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('4', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('4', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('4', '10011')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('4', '100')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('4', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('4', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('5', 'Official-5', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'A380', 'A380-189', '2000-01-01', '2012-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('5', '330-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('5', 'pw999')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('5', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('5', 'UK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('5', '1012')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('5', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('5', 'Laser Drill')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('5', '10000')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('5', '110')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('5', 'VII(f)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('5', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('6', 'Official-6', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-189', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('7', 'Official-7', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'A380', 'A380-189', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('7', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('7', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('7', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('7', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('7', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('7', '1011')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('7', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('7', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('7', '10011')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('7', '100')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('7', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('7', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('8', 'Official-8', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-189', '2000-01-01', '2012-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('8', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('8', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('8', 'IN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('8', 'SG')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('8', 'CA')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('8', '1009')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('8', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('8', 'Single Crystal')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('8', 'Laser Drill')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('8', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('8', '10009')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('8', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('8', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('8', '3a33.1')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('8', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('9', 'Official-9', 'GTS', 'IA1', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-189', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('10', 'Official-10', 'GTS', 'V20', 'type1', 'ITAR', 'scope1', 'N', 'A380', 'A380-189', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('11', 'Official-11', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-300', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('11', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('11', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('11', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('11', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('11', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('11', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('11', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('11', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('11', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('11', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('11', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('11', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('11', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('11', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('11', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('11', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('12', 'Official-12', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-300', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('13', 'Official-13', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-300', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('13', '330-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('13', 'pw999')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('13', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('13', 'UK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('13', '1012')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('13', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('13', 'Laser Drill')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('13', '10000')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('13', '110')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('13', 'VII(f)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('13', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('14', 'Official-14', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-300', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('15', 'Official-15', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'A380', 'A380-300', '2000-01-01', '2012-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('15', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('15', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('15', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('15', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('15', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('15', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('15', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('15', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('15', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('15', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('15', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('15', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('15', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('15', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('15', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('15', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('16', 'Official-16', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-300', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('17', 'Official-17', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'A380', 'A380-300', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('17', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('17', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('17', 'IN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('17', 'SG')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('17', 'CA')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('17', '1009')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('17', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('17', 'Single Crystal')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('17', 'Laser Drill')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('17', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('17', '10009')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('17', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('17', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('17', '3a33.1')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('17', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('18', 'Official-18', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-300', '2000-01-01', '2012-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('19', 'Official-19', 'GTS', 'IA1', 'type1', 'ITAR', 'scope1', 'Y', 'A380', 'A380-300', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('20', 'Official-20', 'GTS', 'V20', 'type1', 'ITAR', 'scope1', 'N', 'A380', 'A380-300', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('21', 'Official-21', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-199', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('21', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('21', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('21', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('21', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('21', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('21', '1011')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('21', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('21', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('21', '10011')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('21', '100')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('21', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('21', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('22', 'Official-22', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-199', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('23', 'Official-23', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-199', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('23', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('23', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('23', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('23', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('23', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('23', '1011')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('23', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('23', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('23', '10011')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('23', '100')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('23', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('23', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('24', 'Official-24', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-199', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('25', 'Official-25', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'A777', 'A777-199', '2000-01-01', '2012-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('26', 'Official-26', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-199', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('27', 'Official-27', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'A777', 'A777-199', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('27', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('27', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('27', 'IN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('27', 'SG')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('27', 'CA')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('27', '1009')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('27', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('27', 'Single Crystal')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('27', 'Laser Drill')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('27', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('27', '10009')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('27', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('27', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('27', '3a33.1')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('27', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('28', 'Official-28', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-199', '2000-01-01', '2012-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('29', 'Official-29', 'GTS', 'IA1', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-199', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('30', 'Official-30', 'GTS', 'V20', 'type1', 'ITAR', 'scope1', 'N', 'A777', 'A777-199', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('31', 'Official-31', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('32', 'Official-32', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('33', 'Official-33', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-400', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('33', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('33', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('33', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('33', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('33', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('33', '1011')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('33', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('33', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('33', '10011')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('33', '100')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('33', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('33', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('34', 'Official-34', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('35', 'Official-35', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'A777', 'A777-400', '2000-01-01', '2012-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('35', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('35', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('35', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('35', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('35', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('35', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('35', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('35', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('35', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('35', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('35', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('35', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('35', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('35', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('35', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('35', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('36', 'Official-36', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('37', 'Official-37', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'A777', 'A777-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('38', 'Official-38', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-400', '2000-01-01', '2012-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('38', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('38', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('38', 'IN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('38', 'SG')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('38', 'CA')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('38', '1009')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('38', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('38', 'Single Crystal')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('38', 'Laser Drill')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('38', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('38', '10009')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('38', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('38', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('38', '3a33.1')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('38', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('39', 'Official-39', 'GTS', 'IA1', 'type1', 'ITAR', 'scope1', 'Y', 'A777', 'A777-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('40', 'Official-40', 'GTS', 'V20', 'type1', 'ITAR', 'scope1', 'N', 'A777', 'A777-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('41', 'Official-41', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'F35-STOV', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('41', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('41', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('41', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('41', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('41', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('41', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('41', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('41', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('41', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('41', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('41', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('41', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('41', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('41', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('41', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('41', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('42', 'Official-42', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'F35-STOV', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('43', 'Official-43', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'F35-STOV', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('43', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('43', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('43', 'IN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('43', 'SG')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('43', 'CA')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('43', '1009')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('43', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('43', 'Single Crystal')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('43', 'Laser Drill')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('43', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('43', '10009')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('43', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('43', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('43', '3a33.1')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('43', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('44', 'Official-44', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'F35-STOV', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('45', 'Official-45', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'JSF1', 'F35-STOV', '2000-01-01', '2012-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('46', 'Official-46', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'F35-STOV', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('47', 'Official-47', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'JSF1', 'F35-STOV', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('47', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('47', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('47', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('47', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('47', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('47', '1011')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('47', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('47', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('47', '10011')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('47', '100')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('47', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('47', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('48', 'Official-48', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'F35-STOV', '2000-01-01', '2012-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('49', 'Official-49', 'GTS', 'IA1', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'F35-STOV', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('50', 'Official-50', 'GTS', 'V20', 'type1', 'ITAR', 'scope1', 'N', 'JSF1', 'F35-STOV', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('50', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('50', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('50', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('50', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('50', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('50', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('50', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('50', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('50', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('50', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('50', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('50', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('50', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('50', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('50', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('50', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('51', 'Official-51', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'D33-MIGO', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('52', 'Official-52', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'D33-MIGO', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('52', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('52', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('52', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('52', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('52', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('52', '1011')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('52', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('52', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('52', '10011')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('52', '100')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('52', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('52', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('53', 'Official-53', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'D33-MIGO', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('54', 'Official-54', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'D33-MIGO', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('55', 'Official-55', 'OCR', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'JSF1', 'D33-MIGO', '2000-01-01', '2012-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('55', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('55', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('55', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('55', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('55', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('55', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('55', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('55', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('55', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('55', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('55', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('55', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('55', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('55', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('55', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('55', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('56', 'Official-56', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'D33-MIGO', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('57', 'Official-57', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'N', 'JSF1', 'D33-MIGO', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('57', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('57', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('57', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('57', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('57', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('57', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('57', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('57', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('57', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('57', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('57', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('57', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('57', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('57', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('57', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('57', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('58', 'Official-58', 'GTS', 'A21', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'D33-MIGO', '2000-01-01', '2012-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('59', 'Official-59', 'GTS', 'IA1', 'type1', 'ITAR', 'scope1', 'Y', 'JSF1', 'D33-MIGO', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('60', 'Official-60', 'GTS', 'V20', 'type1', 'ITAR', 'scope1', 'N', 'JSF1', 'D33-MIGO', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('60', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('60', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('60', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('60', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('60', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('60', '1011')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('60', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('60', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('60', '10011')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('60', '100')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('60', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('60', '1-9.Z.9')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('61', 'Official-61', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'JSF2', 'F40-STOV', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('62', 'Official-62', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'JSF2', 'F40-STOV', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('62', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('62', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('62', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('62', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('62', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('62', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('62', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('62', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('62', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('62', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('62', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('62', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('62', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('62', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('62', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('62', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('63', 'Official-63', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'N', 'JSF2', 'F40-STOV', '2000-01-01', '2012-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('64', 'Official-64', 'GTS', 'A21', 'type1', 'EAR', 'scope1', 'N', 'JSF2', 'F40-STOV', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('65', 'Official-65', 'GTS', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'JSF2', 'F40-STOV', '2000-01-01', '2012-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('65', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('65', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('65', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('65', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('65', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('65', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('65', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('65', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('65', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('65', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('65', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('65', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('65', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('65', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('65', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('65', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('66', 'Official-66', 'GTS', 'IA1', 'type1', 'EAR', 'scope1', 'Y', 'JSF2', 'F40-STOV', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('67', 'Official-67', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'JSF2', 'D40-MIGO', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('68', 'Official-68', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'JSF2', 'D40-MIGO', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('68', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('68', 'pw210')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('68', 'IN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('68', 'SG')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('68', 'CA')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('68', '1009')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('68', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('68', 'Single Crystal')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('68', 'Laser Drill')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('68', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('68', '10009')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('68', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('68', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('68', '3a33.1')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('68', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('69', 'Official-69', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'N', 'JSF2', 'D40-MIGO', '2000-01-01', '2012-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('70', 'Official-70', 'GTS', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'JSF2', 'D40-MIGO', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('71', 'Official-71', 'GTS', 'A21', 'type1', 'EAR', 'scope1', 'N', 'JSF2', 'D40-MIGO', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('71', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('71', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('71', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('71', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('71', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('71', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('71', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('71', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('71', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('71', '102')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('71', 'VIII(b)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('71', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('72', 'Official-72', 'GTS', 'V20', 'type1', 'EAR', 'scope1', 'N', 'JSF2', 'D40-MIGO', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('73', 'Official-73', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'A499', 'A499-199', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('74', 'Official-74', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'A499', 'A499-199', '2000-01-01', '2015-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('74', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('74', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('74', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('74', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('74', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('74', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('74', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('74', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('74', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('74', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('74', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('74', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('74', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('74', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('74', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('74', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('75', 'Official-75', 'GTS', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'A499', 'A499-199', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('76', 'Official-76', 'GTS', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'A499', 'A499-199', '2000-01-01', '2012-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('76', '320-9')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('76', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('76', 'JP')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('76', 'CN')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('76', 'HK')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('76', '1010')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('76', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('76', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('76', '10010')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('76', '102')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('76', 'VIII(b)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('76', '1-9.E.1')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('77', 'Official-77', 'GTS', 'V20', 'type1', 'EAR', 'scope1', 'N', 'A499', 'A499-199', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('78', 'Official-78', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'A499', 'A499-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('79', 'Official-79', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'A499', 'A499-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('80', 'Official-80', 'OCR', 'A21', 'type1', 'EAR', 'scope1', 'N', 'A499', 'A499-400', '2000-01-01', '2012-12-31');
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('80', '300-1')
+INSERT INTO AuthorityItems (InternalLicenseNo, Item) VALUES ('80', 'pw308d')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('80', 'CA')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('80', 'UK')
+INSERT INTO AuthorityCountries (InternalLicenseNo, Country) VALUES ('80', 'JP')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('80', '1001')
+INSERT INTO AuthorityUsers (InternalLicenseNo, UserId) VALUES ('80', '1002')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('80', 'Fadec')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('80', 'Hot Sction')
+INSERT INTO AuthorityCharacteristics (InternalLicenseNo, Characteristics) VALUES ('80', 'General')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('80', '10001')
+INSERT INTO AuthorityResource (InternalLicenseNo, ResourceId) VALUES ('80', '10002')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('80', '100')
+INSERT INTO AuthorityForeignConsignee (InternalLicenseNo, ForeignConsignee) VALUES ('80', '101')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('80', 'VIII(a)')
+INSERT INTO AuthorityClassification (InternalLicenseNo, Classification) VALUES ('80', '9E901')
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('81', 'Official-81', 'GTS', 'A21', 'type1', 'EAR', 'scope1', 'Y', 'A499', 'A499-400', '2000-01-01', '2015-12-31');
+GO 
+
+INSERT INTO Authority (InternalLicenseNo, OfficialLicenseNo, SourceSystem, LicenseStatus, LicenseType, Jurisdiction, Scope, SME, Platform, Model, StartDate, ExpiryDate)
+VALUES ('82', 'Official-82', 'GTS', 'V20', 'type1', 'EAR', 'scope1', 'N', 'A499', 'A499-400', '2000-01-01', '2015-12-31');
+GO
+
+/* Sample data for Control Table */
+INSERT INTO AuthorityControl VALUES ('GTS', current_timestamp, '', 0, 0, 0, 0, 0, 0, 0, 0, '', current_timestamp);
+
+/* Sample data for CCL Countries -- Have to add only RESTRCITED/DENIED Countries */
+INSERT INTO CCLCountries values ('1', 'EAR', 'EAR91', 'CN', 'AT', '1')
+INSERT INTO CCLCountries values ('2', 'EAR', 'EAR91', 'AF', 'AT', '1') 
+
